@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A chunked, quiz-driven study companion for CSA-300 UI/UX Design — Units 1 to 3." />
+  <meta name="theme-color" content="#f6f3ec" />
+  <title>UI/UX Field Notes — CSA-300</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#home" data-action="go-home">
+        <span class="brand-mark" aria-hidden="true">U<span>/</span>X</span>
+        <span class="brand-text">
+          <strong>Field Notes</strong>
+          <small>CSA-300 · UI/UX Design</small>
+        </span>
+        <span class="sr-only">— home</span>
+      </a>
+
+      <nav class="topnav" aria-label="Primary">
+        <a href="#home" data-nav="home">Home</a>
+        <a href="#toc" data-nav="toc">Contents</a>
+        <a href="#progress" data-nav="progress">Progress</a>
+        <a href="#final" data-nav="final">Final test</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="icon-btn" type="button" data-action="open-search" aria-label="Search notes" title="Search (press /)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+        </button>
+        <button class="icon-btn" type="button" data-action="toggle-theme" aria-label="Toggle colour theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg>
+        </button>
+        <button class="menu-btn" type="button" data-action="toggle-sidebar" aria-label="Open contents" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Table of contents">
+      <div class="sidebar-head">
+        <p class="eyebrow">Study map</p>
+        <h2>Table of contents</h2>
+        <div class="sidebar-progress">
+          <div class="progress-track"><span id="sidebar-progress-fill"></span></div>
+          <p><span id="sidebar-progress-label">0%</span> complete</p>
+        </div>
+      </div>
+      <div id="sidebar-toc" class="sidebar-toc"></div>
+      <div class="sidebar-foot">
+        <a class="side-link" href="#progress" data-nav="progress">
+          <span>Your progress</span><span aria-hidden="true">→</span>
+        </a>
+        <a class="side-link" href="#final" data-nav="final">
+          <span>Final mixed test</span><span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </aside>
+
+    <main id="main" class="main" tabindex="-1">
+      <div id="app"></div>
+    </main>
+  </div>
+
+  <div class="scrim" id="scrim" data-action="close-sidebar" hidden></div>
+
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-labelledby="search-title" hidden>
+    <div class="search-panel">
+      <div class="search-top">
+        <h2 id="search-title">Search the notes</h2>
+        <button class="icon-btn" type="button" data-action="close-search" aria-label="Close search">✕</button>
+      </div>
+      <label class="search-field">
+        <span class="sr-only">Search terms, chapters and concepts</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+        <input type="search" id="search-input" placeholder="Try: affordance, five elements, personas…" autocomplete="off" />
+      </label>
+      <div id="search-results" class="search-results">
+        <p class="search-hint">Search across all chapters, chunks and key terms.</p>
+      </div>
+      <div class="search-foot"><kbd>/</kbd> to open <span>·</span> <kbd>Esc</kbd> to close</div>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="false"></div>
+
+  <noscript>
+    <div class="noscript">This study app needs JavaScript enabled. Please enable it and reload.</div>
+  </noscript>
+
+  <script src="js/data-unit1.js"></script>
+  <script src="js/data-unit2.js"></script>
+  <script src="js/data-unit3.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
